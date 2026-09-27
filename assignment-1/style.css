@@ -49,3 +49,11 @@ th {
     background-color: #1e3a5f;
     color: white;
 }
+
+li {
+    margin-bottom: 6px;
+}
+
+a {
+    color: #1e3a5f;
+}
