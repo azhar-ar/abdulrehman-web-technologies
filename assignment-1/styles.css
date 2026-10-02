@@ -1,0 +1,129 @@
+/* Whole page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header: photo, name and tagline */
+header {
+    background-color: #1e3a5f;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 4px solid white;
+}
+
+header h1 {
+    margin: 15px 0 5px 0;
+}
+
+.tagline {
+    margin: 0;
+    font-size: 18px;
+}
+
+/* Navigation bar */
+nav {
+    background-color: #16304f;
+    text-align: center;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main content box */
+main {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #cccccc;
+}
+
+/* Each section */
+section {
+    margin-bottom: 25px;
+}
+
+h2 {
+    color: #1e3a5f;
+    border-bottom: 2px solid #1e3a5f;
+    padding-bottom: 5px;
+}
+
+/* Project cards */
+article {
+    border: 1px solid #cccccc;
+    border-left: 5px solid #1e3a5f;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+}
+
+article h3 {
+    margin: 0 0 5px 0;
+}
+
+article p {
+    margin: 0;
+}
+
+/* Education table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #cccccc;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #1e3a5f;
+    color: white;
+}
+
+/* Lists and links */
+li {
+    margin-bottom: 6px;
+}
+
+a {
+    color: #1e3a5f;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    color: #777777;
+}
