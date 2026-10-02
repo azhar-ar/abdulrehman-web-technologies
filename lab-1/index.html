@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ShopNest - an online store for electronics, fashion, home goods and more.">
+    <title>ShopNest - Online Store</title>
+</head>
+<body>
+
+    <!-- Lab 1: Semantic HTML Scaffold | Muhammad Abdul Rehman Azhar -->
+
+    <header>
+        <h1><a href="index.html">ShopNest</a></h1>
+        <p>Everything you need, delivered to your door.</p>
+
+        <form action="search.html" method="get" role="search">
+            <label for="site-search">Search products</label>
+            <input type="search" id="site-search" name="q" placeholder="e.g. headphones">
+            <button type="submit">Search</button>
+        </form>
+
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="#featured-products">Featured</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#newsletter">Newsletter</a></li>
+                <li><a href="account.html">My Account</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="featured-products" aria-labelledby="featured-heading">
+            <h2 id="featured-heading">Featured Products</h2>
+
+            <article>
+                <h3>Wireless Headphones</h3>
+                <p>Noise-cancelling over-ear headphones with 30-hour battery life.</p>
+                <p>Price: <data value="8999">Rs. 8,999</data></p>
+                <a href="product-headphones.html">View product</a>
+            </article>
+
+            <article>
+                <h3>Smart Watch</h3>
+                <p>Fitness tracking, heart-rate monitor and phone notifications.</p>
+                <p>Price: <data value="12499">Rs. 12,499</data></p>
+                <a href="product-smartwatch.html">View product</a>
+            </article>
+
+            <article>
+                <h3>Leather Backpack</h3>
+                <p>Water-resistant backpack with a padded 15-inch laptop sleeve.</p>
+                <p>Price: <data value="6499">Rs. 6,499</data></p>
+                <a href="product-backpack.html">View product</a>
+            </article>
+        </section>
+
+        <section id="categories" aria-labelledby="categories-heading">
+            <h2 id="categories-heading">Shop by Category</h2>
+            <ul>
+                <li><a href="category-electronics.html">Electronics</a></li>
+                <li><a href="category-fashion.html">Fashion</a></li>
+                <li><a href="category-home.html">Home &amp; Kitchen</a></li>
+                <li><a href="category-books.html">Books</a></li>
+                <li><a href="category-sports.html">Sports &amp; Outdoors</a></li>
+            </ul>
+        </section>
+
+        <section id="newsletter" aria-labelledby="newsletter-heading">
+            <h2 id="newsletter-heading">Newsletter Signup</h2>
+            <p>Subscribe to get new arrivals and exclusive deals in your inbox.</p>
+
+            <form action="subscribe.html" method="post">
+                <p>
+                    <label for="newsletter-name">Name</label>
+                    <input type="text" id="newsletter-name" name="name" autocomplete="name">
+                </p>
+                <p>
+                    <label for="newsletter-email">Email address</label>
+                    <input type="email" id="newsletter-email" name="email" autocomplete="email" required>
+                </p>
+                <p>
+                    <input type="checkbox" id="newsletter-consent" name="consent" required>
+                    <label for="newsletter-consent">I agree to receive marketing emails.</label>
+                </p>
+                <button type="submit">Subscribe</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+
+        <nav aria-label="Shop links">
+            <h2>Shop</h2>
+            <ul>
+                <li><a href="new-arrivals.html">New Arrivals</a></li>
+                <li><a href="best-sellers.html">Best Sellers</a></li>
+                <li><a href="deals.html">Deals</a></li>
+                <li><a href="gift-cards.html">Gift Cards</a></li>
+            </ul>
+        </nav>
+
+        <nav aria-label="Customer service links">
+            <h2>Customer Service</h2>
+            <ul>
+                <li><a href="help.html">Help Center</a></li>
+                <li><a href="shipping.html">Shipping Info</a></li>
+                <li><a href="returns.html">Returns &amp; Refunds</a></li>
+                <li><a href="track-order.html">Track Order</a></li>
+            </ul>
+        </nav>
+
+        <nav aria-label="Company links">
+            <h2>Company</h2>
+            <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms of Service</a></li>
+            </ul>
+        </nav>
+
+        <address>
+            Contact us: <a href="mailto:support@shopnest.example">support@shopnest.example</a>
+        </address>
+
+        <p><small>&copy; 2026 ShopNest. All rights reserved.</small></p>
+
+    </footer>
+
+</body>
+</html>
