@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Yellow desk lamp">
+  <rect width="400" height="400" fill="#f6f2e6"/>
+
+  <ellipse cx="200" cy="320" rx="80" ry="16" fill="#3f4652"/>
+  <line x1="200" y1="318" x2="160" y2="200" stroke="#3f4652" stroke-width="12" stroke-linecap="round"/>
+  <line x1="160" y1="200" x2="230" y2="130" stroke="#3f4652" stroke-width="12" stroke-linecap="round"/>
+  <path d="M215 110 L295 150 L265 200 L190 160 Z" fill="#f2b705"/>
+  <circle cx="160" cy="200" r="11" fill="#2a2f37"/>
+</svg>

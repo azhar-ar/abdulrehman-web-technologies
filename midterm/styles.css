@@ -1,0 +1,299 @@
+/* =========================================================
+   Assignment 2 - Closmo
+   My own CSS on top of Bootstrap 5.3.3. Bootstrap does the grid,
+   navbar, cards and spacing; this file adds the brand look.
+   Loaded after Bootstrap, so equal-specificity rules here win.
+   ========================================================= */
+
+/* Brand colours defined once, reused everywhere with var() */
+:root {
+    --brand: #c2185b;
+    --brand-dark: #8e0e41;
+    --accent: #ffc107;
+    --ink: #1f2933;
+    --footer-bg: #1b1f2a;
+}
+
+body {
+    background-color: #f6f7fb;
+    color: var(--ink);
+}
+
+/* ---------- Header ---------- */
+.topbar {
+    background-color: var(--brand-dark);
+    color: #ffffff;
+}
+
+.brand-bar {
+    background-color: var(--brand);
+}
+
+.site-logo {
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.site-logo:hover {
+    color: #ffffff;
+}
+
+.btn-search {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: var(--ink);
+}
+
+.btn-search:hover {
+    background-color: #e0a800;
+}
+
+.cart-link {
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.cart-link:hover {
+    color: #ffffff;
+}
+
+.cart-link i {
+    font-size: 1.4rem;
+    vertical-align: middle;
+}
+
+/* Category links under the header.
+   Phones: the links stay on one line and the row scrolls sideways
+   instead of squashing or wrapping into a mess. */
+.category-nav {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.category-nav .nav-link {
+    padding: 12px 14px;
+    color: var(--ink);
+    font-weight: 500;
+}
+
+.category-nav .nav-link:hover,
+.category-nav .nav-link.active {
+    color: var(--brand);
+}
+
+/* Tablets and up: there is room, so centre the links instead */
+@media (min-width: 768px) {
+    .category-nav {
+        justify-content: center;
+    }
+}
+
+/* ---------- Hero ---------- */
+.hero {
+    padding: 40px 32px;
+    border-radius: 16px;
+    background: linear-gradient(120deg, var(--brand) 0%, #6a1b9a 100%);
+    color: #ffffff;
+}
+
+.hero-kicker {
+    font-weight: 600;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero-title {
+    font-size: 2rem;
+    font-weight: 700;
+    max-width: 640px;
+}
+
+.section-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+/* ---------- Category tiles ---------- */
+.category-tile {
+    display: block;
+    padding: 16px 8px;
+    border-radius: 12px;
+    background-color: #ffffff;
+    border: 1px solid #e3e6ee;
+    color: var(--ink);
+    text-align: center;
+    text-decoration: none;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.category-tile i {
+    display: block;
+    font-size: 1.8rem;
+    color: var(--brand);
+}
+
+.category-tile span {
+    font-size: 0.9rem;
+}
+
+.category-tile:hover {
+    border-color: var(--brand);
+    color: var(--brand);
+}
+
+/* ---------- Product cards ---------- */
+.product-card {
+    border: 1px solid #e3e6ee;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);     /* lifts the card without moving its neighbours */
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.10);
+}
+
+.product-card .card-img-top {
+    height: auto;
+    aspect-ratio: 1 / 1;             /* square images keep every card the same height */
+    object-fit: cover;
+}
+
+.product-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.product-name a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.product-name a:hover {
+    color: var(--brand);
+}
+
+.price {
+    color: var(--brand);
+    font-weight: 700;
+}
+
+/* "Rs. 3,600" must never split across two lines on narrow cards */
+.price,
+.old-price {
+    white-space: nowrap;
+}
+
+.price-lg {
+    font-size: 2rem;
+    margin-right: 8px;
+}
+
+.old-price {
+    color: #8a94a6;
+    font-size: 0.85rem;
+    margin-left: 4px;
+}
+
+.btn-brand {
+    background-color: var(--brand);
+    border-color: var(--brand);
+    color: #ffffff;
+}
+
+.btn-brand:hover,
+.btn-brand:focus-visible {
+    background-color: var(--brand-dark);
+    border-color: var(--brand-dark);
+    color: #ffffff;
+}
+
+/* ---------- Product detail page ---------- */
+.product-image-box {
+    position: relative;              /* anchors the absolutely positioned discount badge */
+    overflow: hidden;
+    border: 1px solid #e3e6ee;
+    border-radius: 16px;
+    background-color: #ffffff;
+}
+
+.product-image-box img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.product-title {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.feature-list li {
+    margin-bottom: 4px;
+}
+
+.delivery-info li {
+    padding: 10px 0;
+    border-top: 1px solid #e3e6ee;
+}
+
+.delivery-info i {
+    color: var(--brand);
+    margin-right: 8px;
+}
+
+.spec-table th {
+    width: 35%;
+    font-weight: 600;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+    background-color: var(--footer-bg);
+    color: #c9cfdb;
+}
+
+.footer-heading {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.site-footer a {
+    color: #c9cfdb;
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    color: #ffffff;
+}
+
+/* A long email address has no spaces, so it can't wrap and would stick out of
+   its narrow column on tablets. overflow-wrap: anywhere lets it break. */
+.site-footer address a {
+    overflow-wrap: anywhere;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.social-link {
+    display: inline-block;
+    font-size: 1.3rem;
+    margin-right: 12px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #2e3444;
+    color: #8a94a6;
+}
