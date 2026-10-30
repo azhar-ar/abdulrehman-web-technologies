@@ -1,53 +1,54 @@
-# Assignment 2 — Closmo: Static, Responsive Pages
+# Lab Mid Term — Upgrade Your E-commerce Listing and Product Pages
 
-**Student:** Muhammad Abdul Rehman Azhar (FA24-BCS-058) · **Course:** CSC336 Web Technologies
+- **Name:** Muhammad Abdul Rehman Azhar
+- **Roll number:** FA24-BCS-058
+- **Course:** CSC336 Web Technologies (FA26 BCS A)
 
-## Reference e-commerce site
+## My personal numbers
 
-- **Name:** Daraz Pakistan
-- **URL:** https://www.daraz.pk/
-- **Homepage screenshot:**
+| Value | Formula | Result |
+| --- | --- | --- |
+| N | last two digits of the roll number | **58** |
+| BP | 600 + N | **658px** |
+| H | (N × 7) mod 360 = 406 mod 360 | **46** → accent colour `hsl(46, 70%, 45%)` |
+| K | (N mod 3) + 3 = 1 + 3 | **4** |
+| Sticky top | (N mod 40) + 70 = 18 + 70 | **88px** |
+| Premium price | N × 100 | **above Rs. 5,800** |
 
-![Daraz homepage](daraz-homepage.jpg)
+Starting point: a copy of my `assignment-2/` (Closmo store, Bootstrap 5.3.3). Bootstrap is still used and the header, product cards and footer are unchanged.
 
-This same reference site is used for Assignments 3 and 4.
+## Files I changed
 
-### What I modelled from it (layout and features only, no code copied)
+| File | Task | Change |
+| --- | --- | --- |
+| `index.html` | 1, 3 | Added the category radio buttons and a category class on every product column (Task 1). Added the search box, the sort button, the "No products found" message, `id="product-grid"` and the `<script>` tag (Task 3). |
+| `product.html` | 2 | Replaced the Bootstrap two-column row with one CSS Grid (`.product-layout`) that has three named areas. Moved the description and specifications into their own full-width area and made the description longer. |
+| `styles.css` | 1, 2, 3 | Added a MIDTERM section at the end: the accent colour, the filter rules, the grid areas, the sticky details box, and styles for the Premium label and the no-results message. |
+| `script.js` | 3 | New file containing the live search, the price sort and the Premium labels. |
+| `images/` | — | Fixed the product image file names, which had been mixed up in my baseline copy. |
 
-- A header with the logo, a large search bar and a cart icon with an item count
-- A row of category links under the header
-- Product cards showing image, name, price, a struck-through old price and a discount badge
-- A product page with a large image, price, description, quantity selector, Add to Cart, and delivery and returns information
+## Task 1 — CSS-only category filter
 
-## Pages
+- I put the 12 products into K = 4 categories (Electronics, Fashion, Accessories, Home) by adding a class such as `cat-electronics` to each product column. I also added K + 1 = 5 radio buttons with the same `name`, and **All** is `checked` on load.
+- The rule `#products:has(#cat-electronics:checked) .product-item:not(.cat-electronics) { display: none; }` hides every card that doesn't match the checked radio. `display: none` removes the column completely, so Bootstrap's flex row leaves no empty gaps.
+- `input:checked + label` gives the selected filter the accent colour `hsl(46, 70%, 45%)`. No JavaScript is used.
 
-| File | What it is |
-| --- | --- |
-| `index.html` | Homepage / product listing: header, sale banner, category tiles, 12 product cards, footer |
-| `product.html` | Product detail page for the Classic Smartwatch: large image, name, price, description, quantity selector, Add to Cart, specifications table |
-| `styles.css` | My own CSS on top of Bootstrap (brand colours, header, cards, footer) |
-| `images/` | Product images (simple SVG illustrations) |
+## Task 2 — Product page grid with a sticky details box
 
-## How it is built
+- `.product-layout` is a CSS Grid with three named areas: `image`, `details` and `description`. Below 658px, `grid-template-areas: "image" "details" "description"` stacks them in one column.
+- From `@media (min-width: 658px)` up, the layout uses two columns, `"image details"` and `"description description"`. The image and details sit side by side, and the description spans the full width underneath.
+- At that width, the details box (name, price, quantity, Add to Cart) has `position: sticky; top: 88px;`, so it stays on screen while the long description scrolls past.
 
-- **Bootstrap 5.3.3** (from the jsDelivr CDN) does the real layout work:
-  - the 12-column grid (`container`, `row`, `col-*`) for the header, product grid, product page and footer
-  - the navbar (`navbar navbar-expand`) for the category links
-  - components: `card`, `badge`, `breadcrumb`, `input-group`, `table`
-- **Bootstrap Icons** for the cart, search and small icons.
-- **No JavaScript.** Bootstrap's JS bundle is not loaded. The navbar uses `navbar-expand`, so it never collapses and needs no hamburger script; on phones the link row scrolls sideways instead.
-- The cart icon, search box, quantity selector and Add to Cart buttons are not functional yet (Assignment 3 adds JavaScript).
+## Task 3 — JavaScript: live search and price sort
 
-## Responsive behaviour
+- **Search:** every key press (the `input` event) compares the lowercase product name with the lowercase typed text and sets `item.hidden` on each card. A card counts as visible only if `getComputedStyle(item).display` is not `none`. This means it has to pass both the search and the CSS category filter. When none are visible, the "No products found" message is shown.
+- **Sort:** the sort button reads each price from the card's own `.price` text and sorts the existing columns with `Array.sort`. It then moves them with `appendChild`, so `innerHTML` is never used. Each click flips the order between low to high and high to low.
+- **Premium:** when the page loads, the script adds a "Premium" `<span>` to every product priced above N × 100 = Rs. 5,800 (the Classic Smartwatch and the Over-Ear Headphones).
 
-| Width | Header | Product grid (`col-6 col-md-4 col-lg-3`) | Product page |
-| --- | --- | --- | --- |
-| Phone (~375px) | Logo and cart on one row, search full width below | 2 per row | Image above details |
-| Tablet (768px) | Logo, search and cart on one row | 3 per row | Image and details side by side |
-| Desktop (992px+) | Same, wider search | 4 per row | Side by side |
+## Testing
 
-12 products divide evenly into 2, 3 and 4 columns, so no row is left half empty at any width.
+I checked each task at 375px, exactly 658px, and 1280px. The screenshots are in `FA24-BCS-058-midterm.pdf`.
 
-## How to run
+## AI tools used
 
-Open `index.html` in a browser. An internet connection is needed for the Bootstrap and Bootstrap Icons CDN files.
+- Claude (Anthropic)
