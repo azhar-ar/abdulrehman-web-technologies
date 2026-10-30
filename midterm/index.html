@@ -157,8 +157,17 @@
                 <input type="radio" name="category" id="cat-home">
                 <label for="cat-home">Home</label>
             </div>
+                        <!-- MIDTERM TASK 3: search box and sort button. They only work because of script.js. -->
+            <div class="d-flex flex-wrap gap-2 mb-3">
+                <input type="search" id="search-box" class="form-control search-box" placeholder="Search products by name" aria-label="Search products by name">
+                <button type="button" id="sort-btn" class="btn btn-outline-dark">Sort by price</button>
+            </div>
 
-            <div class="row g-3 g-md-4">
+            <!-- Shown by script.js only when no card matches -->
+            <p id="no-results" class="no-results" hidden>No products found</p>
+
+            <div class="row g-3 g-md-4" id="product-grid">
+
                 <div class="col-6 col-md-4 col-lg-3 product-item cat-fashion">
                     <article class="card h-100 product-card">
                         <span class="badge bg-danger position-absolute top-0 start-0 m-2">-20%</span>
@@ -346,6 +355,9 @@
         </div>
         <p class="footer-bottom small text-center mb-0 py-3">&copy; 2026 Closmo. A student project for CSC336 Web Technologies.</p>
     </footer>
+
+    <!-- MIDTERM TASK 3: my JavaScript. Loaded at the end of <body>, so all the cards already exist when it runs. -->
+    <script src="script.js"></script>
 
 </body>
 </html>
