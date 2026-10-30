@@ -1,129 +1,262 @@
-/* Whole page */
+/* =========================================================
+   Assignment 1 - Personal CV
+   Plain CSS only (no framework). Uses the building blocks from
+   Lectures 5-6: selectors, the cascade, the box model, display.
+   ========================================================= */
+
+/* ---------- 1. Box-sizing reset ----------
+   border-box: width/height INCLUDE padding and border,
+   so a 300px box with 20px padding stays 300px wide. */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* ---------- 2. Design tokens (CSS custom properties) ----------
+   Colours and spacing are defined once here and reused with var(). */
+:root {
+    --navy: #1d3557;
+    --teal: #457b9d;
+    --mint: #a8dadc;
+    --page-bg: #f1f5f9;
+    --card-bg: #ffffff;
+    --text: #1f2933;
+    --muted: #5f6b7a;
+    --border: #d9e2ec;
+
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 32px;
+}
+
+/* ---------- 3. Base ---------- */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    color: #333333;
+    margin: 0;                       /* remove the browser's default 8px margin */
+    background-color: var(--page-bg);
+    color: var(--text);              /* color and font-family INHERIT into every child */
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.25;
+    color: var(--navy);
+}
+
+a {
+    color: var(--teal);
+}
+
+a:hover,
+a:focus {
+    color: var(--navy);
+}
+
+/* ---------- 4. Header ---------- */
+.site-header {
+    background-color: var(--navy);
+    color: #ffffff;
+    text-align: center;              /* centres the inline content: text and inline-block links */
+    padding: var(--space-lg) var(--space-md) var(--space-md);
+}
+
+.profile-photo {
+    display: block;                  /* an <img> is inline by default; block lets margin auto centre it */
+    width: 160px;
+    height: 160px;
+    margin: 0 auto var(--space-md);  /* top 0, left/right auto (centred), bottom 16px */
+    border: 4px solid var(--mint);
+    border-radius: 50%;              /* 50% on a square box = a circle */
+}
+
+.site-header h1 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 2rem;
+}
+
+.tagline {
+    margin: var(--space-sm) 0 var(--space-md);
+    color: var(--mint);
+}
+
+/* Navigation: list items become inline-block so they sit in one row
+   but still accept padding and margin on all four sides. */
+.nav-list {
+    list-style: none;                /* remove bullets */
     margin: 0;
     padding: 0;
 }
 
-/* Header: photo, name and tagline */
-header {
-    background-color: #1e3a5f;
-    color: white;
-    text-align: center;
-    padding: 30px 20px;
+.nav-list li {
+    display: inline-block;
+    margin: 4px;
 }
 
-.photo {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    border: 4px solid white;
+.nav-list a {
+    display: inline-block;           /* an <a> is inline; inline-block lets padding push the box size */
+    padding: 6px 14px;
+    border: 1px solid var(--mint);
+    border-radius: 20px;
+    color: #ffffff;
+    text-decoration: none;
 }
 
-header h1 {
-    margin: 15px 0 5px 0;
+.nav-list a:hover,
+.nav-list a:focus {
+    background-color: var(--mint);
+    color: var(--navy);
 }
 
-.tagline {
+/* ---------- 5. Main column and cards ---------- */
+main {
+    max-width: 860px;                /* never wider than 860px on big screens */
+    margin: var(--space-lg) auto;    /* auto left/right margins centre the column */
+    padding: 0 var(--space-md);      /* breathing room from the screen edge on phones */
+}
+
+/* Every section is a "card": padding inside the border, margin outside it */
+.card {
+    background-color: var(--card-bg);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(29, 53, 87, 0.08);
+}
+
+.card h2 {
+    margin-top: 0;
+    padding-bottom: var(--space-sm);
+    border-bottom: 3px solid var(--mint);
+}
+
+/* ---------- 6. Education table ---------- */
+.table-wrap {
+    overflow-x: auto;                /* on a very narrow screen the table scrolls instead of breaking the page */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;       /* merge neighbouring cell borders into one line */
+}
+
+caption {
+    text-align: left;
+    color: var(--muted);
+    font-size: 0.9rem;
+    padding-bottom: var(--space-sm);
+}
+
+th,
+td {
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid var(--border);
+}
+
+th {
+    background-color: var(--navy);
+    color: #ffffff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f7fafc;       /* zebra stripes make rows easier to follow */
+}
+
+/* ---------- 7. Experience entries ---------- */
+.entry {
+    padding-left: var(--space-md);
+    border-left: 4px solid var(--teal);
+    margin-bottom: var(--space-lg);
+}
+
+.entry:last-child {
+    margin-bottom: 0;
+}
+
+.entry h3 {
     margin: 0;
-    font-size: 18px;
 }
 
-/* Navigation bar */
-nav {
-    background-color: #16304f;
-    text-align: center;
-    padding: 10px;
+.entry-meta {
+    margin: 2px 0 var(--space-sm);
+    color: var(--muted);
+    font-style: italic;
 }
 
-nav ul {
+.entry ul,
+.project-list {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.project-list li {
+    margin-bottom: var(--space-sm);
+}
+
+/* ---------- 8. Skills as "chips" ---------- */
+.card h3 {
+    margin-bottom: var(--space-sm);
+}
+
+.skill-list {
+    list-style: none;
+    margin: 0 0 var(--space-md);
+    padding: 0;
+}
+
+.skill-list li {
+    display: inline-block;           /* chips flow in a row and wrap onto new lines */
+    margin: 0 6px 8px 0;
+    padding: 4px 12px;
+    background-color: #e8f4f5;
+    border: 1px solid var(--mint);
+    border-radius: 16px;
+    color: var(--navy);
+    font-size: 0.9rem;
+}
+
+/* ---------- 9. Contact ---------- */
+address {
+    font-style: normal;              /* browsers italicise <address> by default */
+}
+
+.contact-list {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-nav li {
-    display: inline-block;
-    margin: 0 10px;
+.contact-list li {
+    padding: var(--space-sm) 0;
+    border-bottom: 1px dashed var(--border);
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 5px 10px;
+.contact-list li:last-child {
+    border-bottom: none;
 }
 
-nav a:hover {
-    text-decoration: underline;
-}
-
-/* Main content box */
-main {
-    max-width: 800px;
-    margin: 30px auto;
-    padding: 20px;
-    background-color: white;
-    border: 1px solid #cccccc;
-}
-
-/* Each section */
-section {
-    margin-bottom: 25px;
-}
-
-h2 {
-    color: #1e3a5f;
-    border-bottom: 2px solid #1e3a5f;
-    padding-bottom: 5px;
-}
-
-/* Project cards */
-article {
-    border: 1px solid #cccccc;
-    border-left: 5px solid #1e3a5f;
-    padding: 10px 15px;
-    margin-bottom: 15px;
-}
-
-article h3 {
-    margin: 0 0 5px 0;
-}
-
-article p {
-    margin: 0;
-}
-
-/* Education table */
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-th, td {
-    border: 1px solid #cccccc;
-    padding: 8px;
-    text-align: left;
-}
-
-th {
-    background-color: #1e3a5f;
-    color: white;
-}
-
-/* Lists and links */
-li {
-    margin-bottom: 6px;
-}
-
-a {
-    color: #1e3a5f;
-}
-
-/* Footer */
-footer {
+/* ---------- 10. Footer ---------- */
+.site-footer {
     text-align: center;
-    padding: 15px;
-    color: #777777;
+    padding: var(--space-md);
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+/* ---------- 11. Small screens ---------- */
+@media (max-width: 600px) {
+    .card {
+        padding: var(--space-md);    /* less padding so phones get more room for text */
+    }
+
+    .site-header h1 {
+        font-size: 1.5rem;
+    }
 }

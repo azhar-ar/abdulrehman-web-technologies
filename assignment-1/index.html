@@ -3,126 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Abdul Rehman Azhar - CV</title>
+    <meta name="description" content="CV of Muhammad Abdul Rehman Azhar, BS Computer Science student at COMSATS University Islamabad, Lahore Campus.">
+    <title>Muhammad Abdul Rehman Azhar | CV</title>
+    <!-- All styling lives in one external stylesheet: no inline style attributes anywhere -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <header>
-        <img src="images/profile.svg" alt="Photo of Muhammad Abdul Rehman Azhar" class="photo">
+    <!-- HEADER: who I am, plus the page's navigation -->
+    <header class="site-header">
+        <img class="profile-photo" src="images/profile.svg" alt="Profile photo of Muhammad Abdul Rehman Azhar" width="160" height="160">
         <h1>Muhammad Abdul Rehman Azhar</h1>
-        <p class="tagline">BS Computer Science Student | Co-Founder of EVclave</p>
-    </header>
+        <p class="tagline">Computer Science student &middot; Startup founder &middot; Event organizer</p>
 
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+        <nav aria-label="CV sections">
+            <ul class="nav-list">
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main>
 
-        <section id="about">
+        <section id="about" class="card">
             <h2>About Me</h2>
             <p>
-                I am an AI-focused BS Computer Science student at COMSATS University
-                Islamabad. I enjoy building workflow automations and software projects.
-                I am the Co-Founder of EVclave and the Co-Founder &amp; Chief Organizer
-                of GDSMUN, where I led a team of 100+ volunteers.
+                I am a BS Computer Science student at COMSATS University Islamabad, Lahore Campus,
+                originally from Gujranwala. I enjoy building software that solves real problems for
+                real organizers, which is why I am co-founding <strong>Evclave</strong>, an event
+                ticketing and management platform for event organizers in Pakistan.
+            </p>
+            <p>
+                Outside the classroom I co-founded and lead GDSMUN, Gujranwala's largest private
+                Model United Nations conference, and I run marketing for the COMSATS Youth Society.
             </p>
         </section>
 
-        <section id="education">
+        <!-- Education is tabular data (qualification x institution x status),
+             so a <table> is the semantic choice here, not a layout trick. -->
+        <section id="education" class="card">
             <h2>Education</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Qualification</th>
-                        <th>Institute</th>
-                        <th>Year</th>
-                        <th>Result</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>BS Computer Science</td>
-                        <td>COMSATS University Islamabad</td>
-                        <td>2024 - Present</td>
-                        <td>In progress</td>
-                    </tr>
-                    <tr>
-                        <td>A Levels</td>
-                        <td>The City School, Gujranwala</td>
-                        <td>2022 - 2024</td>
-                        <td>A, B, B, C</td>
-                    </tr>
-                    <tr>
-                        <td>O Levels</td>
-                        <td>Lahore Grammar School, Gujranwala</td>
-                        <td>2020 - 2022</td>
-                        <td>6A*, 1A, 1B</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-wrap">
+                <table>
+                    <caption>Academic history, most recent first</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Qualification</th>
+                            <th scope="col">Institution / Board</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>BS Computer Science</td>
+                            <td>COMSATS University Islamabad, Lahore Campus</td>
+                            <td>In progress (2024&ndash;2028)</td>
+                        </tr>
+                        <tr>
+                            <td>Cambridge A Levels (including Computer Science)</td>
+                            <td>Cambridge Assessment International Education</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr>
+                            <td>Cambridge O Levels (including Computer Science)</td>
+                            <td>Cambridge Assessment International Education</td>
+                            <td>Completed</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
 
-        <section id="skills">
-            <h2>Skills</h2>
-            <ul>
-                <li><strong>Languages:</strong> Python, Java, C++, JavaScript, HTML, CSS</li>
-                <li><strong>Databases:</strong> SQL, PostgreSQL</li>
-                <li><strong>Web Stack:</strong> PERN (PostgreSQL, Express.js, React.js, Node.js)</li>
-                <li><strong>Automation:</strong> n8n, Make, Zapier</li>
-                <li><strong>AI:</strong> Prompt Engineering, AI-Assisted Development</li>
-            </ul>
+        <!-- Each role is an <article>: a self-contained entry that would still make
+             sense if it were copied somewhere else on its own. -->
+        <section id="experience" class="card">
+            <h2>Experience and Leadership</h2>
+
+            <article class="entry">
+                <h3>Co-founder &mdash; Evclave</h3>
+                <p class="entry-meta">Event ticketing and management platform (B2B SaaS)</p>
+                <ul>
+                    <li>Building a ticketing and event-management platform for event organizers in Pakistan, starting with university MUN networks.</li>
+                    <li>Now supporting large-scale events and developing an Expo and Venue Management module (venues, bookings, floor plans, exhibitors, sponsors).</li>
+                </ul>
+            </article>
+
+            <article class="entry">
+                <h3>Co-founder and Chief Organizer &mdash; GDSMUN</h3>
+                <p class="entry-meta">Gujranwala District Schools Model United Nations</p>
+                <ul>
+                    <li>Built Gujranwala's largest private MUN conference from scratch.</li>
+                    <li>Led a team of 100+ members; hosted 350+ delegates and 1,000+ social-event attendees.</li>
+                    <li>Secured 15+ corporate sponsors.</li>
+                </ul>
+            </article>
+
+            <article class="entry">
+                <h3>Director of Marketing &mdash; COMSATS Youth Society</h3>
+                <p class="entry-meta">COMSATS University Islamabad, Lahore Campus</p>
+                <ul>
+                    <li>Lead the society's marketing and promotion for campus events.</li>
+                    <li>Also active in GDGOC, MLSA, CEC, RAS, CMC and CEMC at COMSATS.</li>
+                </ul>
+            </article>
         </section>
 
-        <section id="projects">
+        <section id="projects" class="card">
             <h2>Projects</h2>
-
-            <article>
-                <h3>Barber Appointment Booking Automation (2026)</h3>
-                <p>An n8n workflow that books appointments through email and WhatsApp and sends follow-up reminders.</p>
-            </article>
-
-            <article>
-                <h3>Event Management Platform (2026)</h3>
-                <p>An event registration and scheduling system built with the PERN stack.</p>
-            </article>
-
-            <article>
-                <h3>Medical Symptom Diagnosis Expert System (2026)</h3>
-                <p>A rule-based expert system in Python that maps symptoms to diseases.</p>
-            </article>
-        </section>
-
-        <section id="leadership">
-            <h2>Leadership</h2>
-            <ul>
-                <li><strong>Co-Founder</strong> - EVclave</li>
-                <li><strong>Co-Founder &amp; Chief Organizer</strong> - GDSMUN (2024 - Present)</li>
-                <li><strong>Director of Marketing</strong> - Youth Society COMSATS (2024 - Present)</li>
+            <ul class="project-list">
+                <li><strong>Event Management Platform</strong> &mdash; full-stack web app built on the PERN stack (PostgreSQL, Express, React, Node.js).</li>
+                <li><strong>Medical Symptom Diagnosis Expert System</strong> &mdash; built and debugged end to end in Python.</li>
+                <li><strong>Co-Working Space Reservation Platform</strong> &mdash; built in Java.</li>
+                <li><strong>Go Fish Card Game Engine</strong> &mdash; built in Java.</li>
+                <li><strong>Bakery Management System</strong> &mdash; built in C++.</li>
             </ul>
         </section>
 
-        <section id="contact">
+        <section id="skills" class="card">
+            <h2>Skills</h2>
+
+            <h3>Programming</h3>
+            <ul class="skill-list">
+                <li>C++</li>
+                <li>Java</li>
+                <li>Python</li>
+                <li>JavaScript (ES6+)</li>
+                <li>SQL</li>
+            </ul>
+
+            <h3>Web Development</h3>
+            <ul class="skill-list">
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>React</li>
+                <li>Node.js and Express</li>
+                <li>PostgreSQL</li>
+                <li>Next.js</li>
+            </ul>
+
+            <h3>Tools</h3>
+            <ul class="skill-list">
+                <li>Git and GitHub</li>
+                <li>Figma</li>
+                <li>VS Code</li>
+                <li>n8n</li>
+            </ul>
+
+            <h3>Leadership</h3>
+            <ul class="skill-list">
+                <li>Event management</li>
+                <li>Team leadership</li>
+                <li>Marketing</li>
+                <li>Sponsorship outreach</li>
+            </ul>
+        </section>
+
+        <!-- <address> marks up contact information for the page's author -->
+        <section id="contact" class="card">
             <h2>Contact</h2>
-            <ul>
-                <li>Email: <a href="mailto:azhar.abdulrehman1@gmail.com">azhar.abdulrehman1@gmail.com</a></li>
-                <li>LinkedIn: <a href="https://linkedin.com/in/abdulrehmanazr">linkedin.com/in/abdulrehmanazr</a></li>
-                <li>GitHub: <a href="https://github.com/azhar-ar">github.com/azhar-ar</a></li>
-                <li>Location: Lahore, Pakistan</li>
-            </ul>
+            <address>
+                <ul class="contact-list">
+                    <li>Email: <a href="mailto:azhar.abdulrehman1@gmail.com">azhar.abdulrehman1@gmail.com</a></li>
+                    <li>LinkedIn: <a href="https://www.linkedin.com/in/abdulrehmanazr" target="_blank" rel="noopener noreferrer">linkedin.com/in/abdulrehmanazr</a></li>
+                    <li>GitHub: <a href="https://github.com/azhar-ar" target="_blank" rel="noopener noreferrer">github.com/azhar-ar</a></li>
+                    <li>Location: Lahore, Pakistan</li>
+                </ul>
+            </address>
         </section>
 
     </main>
 
-    <footer>
-        <p>&copy; 2026 Muhammad Abdul Rehman Azhar</p>
+    <footer class="site-footer">
+        <p>&copy; 2026 Muhammad Abdul Rehman Azhar &middot; Built with semantic HTML5 and hand-written CSS.</p>
     </footer>
 
 </body>

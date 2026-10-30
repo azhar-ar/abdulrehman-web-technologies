@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Placeholder profile photo of Abdul Rehman">
+  <rect width="400" height="400" fill="#1d3557"/>
+
+  <circle cx="200" cy="160" r="70" fill="#a8dadc"/>
+  <path d="M80 360 Q80 250 200 250 Q320 250 320 360 Z" fill="#a8dadc"/>
+  <text x="200" y="182" text-anchor="middle" font-family="Arial, sans-serif" font-size="60" font-weight="700" fill="#1d3557">AR</text>
+</svg>

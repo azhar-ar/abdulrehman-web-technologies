@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Orange running shoe">
+  <rect width="400" height="400" fill="#fdf0e8"/>
+
+  <path d="M70 270 Q70 205 140 196 L205 150 Q232 136 252 160 L292 205 Q338 214 338 248 L338 268 Z" fill="#e4572e"/>
+  <rect x="62" y="262" width="282" height="30" rx="15" fill="#ffffff" stroke="#e0c9bd" stroke-width="3"/>
+  <line x1="200" y1="170" x2="226" y2="196" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/>
+  <line x1="185" y1="183" x2="211" y2="209" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/>
+  <line x1="170" y1="196" x2="196" y2="222" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/>
+</svg>

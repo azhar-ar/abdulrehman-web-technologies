@@ -1,0 +1,48 @@
+/* Lab 2 - my own CSS on top of Bootstrap.
+   This file is linked after bootstrap.min.css, so if two rules are equally
+   specific, mine wins (the later rule wins). */
+
+/* Brand colours, defined once here and reused with var() */
+:root {
+    --brand: #c2185b;
+    --brand-dark: #8e0e41;
+}
+
+/* Logo icon colour */
+.text-brand {
+    color: var(--brand);
+}
+
+/* Add to Cart button colour (Bootstrap's .btn gives the shape, this gives the colour) */
+.btn-brand {
+    background-color: var(--brand);
+    border-color: var(--brand);
+    color: #ffffff;
+}
+
+.btn-brand:hover {
+    background-color: var(--brand-dark);
+    border-color: var(--brand-dark);
+    color: #ffffff;
+}
+
+/* Product cards lift a little on hover */
+.product-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Square images, so every card is the same height */
+.product-card .card-img-top {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.price {
+    font-weight: 700;
+    color: var(--brand);
+}

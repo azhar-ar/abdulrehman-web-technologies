@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Without this tag phones render a fake ~980px page and zoom out,
+         so the Bootstrap breakpoints (media queries) would never fire. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closmo | Responsive Navbar and Grid</title>
+
+    <!-- Bootstrap 5.3.3 CSS from the jsDelivr CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <!-- Bootstrap Icons: an icon font, used for the logo and the cart -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- My own CSS loads AFTER Bootstrap so my rules win ties (same specificity, later source order) -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <!-- navbar-expand-md: links are shown in a row from the md breakpoint (768px) up;
+             below 768px they collapse behind the hamburger button. -->
+        <nav class="navbar navbar-expand-md bg-white border-bottom sticky-top" aria-label="Main navigation">
+            <div class="container">
+
+                <!-- 1. Logo (left) -->
+                <a class="navbar-brand fw-bold" href="index.html">
+                    <i class="bi bi-bag-heart-fill text-brand" aria-hidden="true"></i> Closmo
+                </a>
+
+                <!-- 3. Cart + hamburger (right). order-md-last moves this group after the
+                     links on tablets and desktops, while on phones it stays on the first row
+                     next to the logo, so the cart is always visible. -->
+                <div class="nav-actions d-flex align-items-center gap-2 order-md-last">
+                    <a href="#" class="btn btn-outline-dark position-relative" aria-label="Cart, 3 items">
+                        <i class="bi bi-cart3" aria-hidden="true"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
+                    </a>
+                    <!-- The hamburger. Bootstrap's own JS (bundle below) reads data-bs-toggle and
+                         data-bs-target and shows/hides #mainNav. navbar-expand-md hides this
+                         button automatically from 768px up. -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                            aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+                <!-- 2. Links (centre). The collapse div fills the space between the logo and the cart;
+                     mx-auto (margin-left and margin-right: auto) centres the list inside that space. -->
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#products">Shop</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Categories</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Deals</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <main class="container py-4" id="products">
+        <h1 class="h3 mb-1">Featured Products</h1>
+        <p class="text-muted mb-4">4 columns on desktop, 2 on tablet, 1 on phone.</p>
+
+        <!-- Bootstrap grid: .row is a flex container; each column below is a flex item.
+             A row has 12 units, so:
+               col-12    -> 12/12 = 1 card per row  (phones, below 768px)
+               col-md-6  -> 12/6  = 2 cards per row (tablets, 768px and up)
+               col-lg-3  -> 12/3  = 4 cards per row (desktops, 992px and up)
+             g-4 sets the gutter (gap) between columns and rows. -->
+        <div class="row g-4">
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <article class="card h-100 product-card">
+                    <img src="images/earbuds.svg" class="card-img-top" alt="Wireless earbuds in a charging case">
+                    <div class="card-body d-flex flex-column">
+                        <h2 class="card-title h6">Wireless Earbuds</h2>
+                        <p class="card-text small text-muted">24-hour battery with the charging case.</p>
+                        <p class="price">Rs. 3,499</p>
+                        <button type="button" class="btn btn-brand mt-auto">Add to Cart</button>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <article class="card h-100 product-card">
+                    <img src="images/smartwatch.svg" class="card-img-top" alt="Black smartwatch with a blue screen">
+                    <div class="card-body d-flex flex-column">
+                        <h2 class="card-title h6">Classic Smartwatch</h2>
+                        <p class="card-text small text-muted">Heart-rate tracking, 7-day battery.</p>
+                        <p class="price">Rs. 7,999</p>
+                        <button type="button" class="btn btn-brand mt-auto">Add to Cart</button>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <article class="card h-100 product-card">
+                    <img src="images/backpack.svg" class="card-img-top" alt="Grey backpack with a front pocket">
+                    <div class="card-body d-flex flex-column">
+                        <h2 class="card-title h6">Everyday Backpack</h2>
+                        <p class="card-text small text-muted">Water-resistant, fits a 15.6-inch laptop.</p>
+                        <p class="price">Rs. 4,250</p>
+                        <button type="button" class="btn btn-brand mt-auto">Add to Cart</button>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <article class="card h-100 product-card">
+                    <img src="images/shoes.svg" class="card-img-top" alt="Orange running shoe">
+                    <div class="card-body d-flex flex-column">
+                        <h2 class="card-title h6">Running Shoes</h2>
+                        <p class="card-text small text-muted">Light mesh upper, cushioned sole.</p>
+                        <p class="price">Rs. 5,600</p>
+                        <button type="button" class="btn btn-brand mt-auto">Add to Cart</button>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <article class="card h-100 product-card">
+                    <img src="images/lamp.svg" class="card-img-top" alt="Yellow desk lamp">
+                    <div class="card-body d-flex flex-column">
+                        <h2 class="card-title h6">Study Desk Lamp</h2>
+                        <p class="card-text small text-muted">Adjustable arm, warm LED light.</p>
+                        <p class="price">Rs. 2,150</p>
+                        <button type="button" class="btn btn-brand mt-auto">Add to Cart</button>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <article class="card h-100 product-card">
+                    <img src="images/mug.svg" class="card-img-top" alt="Green ceramic mug">
+                    <div class="card-body d-flex flex-column">
+                        <h2 class="card-title h6">Ceramic Mug</h2>
+                        <p class="card-text small text-muted">350 ml, dishwasher safe.</p>
+                        <p class="price">Rs. 899</p>
+                        <button type="button" class="btn btn-brand mt-auto">Add to Cart</button>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <article class="card h-100 product-card">
+                    <img src="images/powerbank.svg" class="card-img-top" alt="Black 20000 mAh power bank">
+                    <div class="card-body d-flex flex-column">
+                        <h2 class="card-title h6">Power Bank 20000 mAh</h2>
+                        <p class="card-text small text-muted">Charges two phones at once.</p>
+                        <p class="price">Rs. 4,999</p>
+                        <button type="button" class="btn btn-brand mt-auto">Add to Cart</button>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <article class="card h-100 product-card">
+                    <img src="images/sunglasses.svg" class="card-img-top" alt="Black sunglasses">
+                    <div class="card-body d-flex flex-column">
+                        <h2 class="card-title h6">Polarized Sunglasses</h2>
+                        <p class="card-text small text-muted">UV400 lenses, lightweight frame.</p>
+                        <p class="price">Rs. 1,799</p>
+                        <button type="button" class="btn btn-brand mt-auto">Add to Cart</button>
+                    </div>
+                </article>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Bootstrap's JS bundle (includes Popper). Only needed here for the hamburger collapse.
+         Loaded at the end of <body> so the HTML above already exists when it runs. -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
