@@ -135,8 +135,31 @@
              12 products divide evenly into 2, 3 and 4, so no row is ever half empty. -->
         <section id="products">
             <h2 class="section-title">Featured Products</h2>
+
+            <!-- MIDTERM TASK 1: CSS-only category filter (no JavaScript).
+                 K = 4 categories, so K + 1 = 5 radio buttons. "All" is checked on page load.
+                 Every radio has the same name="category", so only one can be selected.
+                 Each product column below has a class like cat-electronics, and the
+                 :has() rules in styles.css hide the columns that don't match. -->
+            <div class="filter-bar mb-3">
+                <input type="radio" name="category" id="cat-all" checked>
+                <label for="cat-all">All</label>
+
+                <input type="radio" name="category" id="cat-electronics">
+                <label for="cat-electronics">Electronics</label>
+
+                <input type="radio" name="category" id="cat-fashion">
+                <label for="cat-fashion">Fashion</label>
+
+                <input type="radio" name="category" id="cat-accessories">
+                <label for="cat-accessories">Accessories</label>
+
+                <input type="radio" name="category" id="cat-home">
+                <label for="cat-home">Home</label>
+            </div>
+
             <div class="row g-3 g-md-4">
-                <div class="col-6 col-md-4 col-lg-3">
+                <div class="col-6 col-md-4 col-lg-3 product-item cat-fashion">
                     <article class="card h-100 product-card">
                         <span class="badge bg-danger position-absolute top-0 start-0 m-2">-20%</span>
                         <img src="images/kurta.svg" class="card-img-top" alt="Purple cotton kurta" width="400" height="400">
@@ -148,7 +171,7 @@
                         </div>
                     </article>
                 </div>
-                <div class="col-6 col-md-4 col-lg-3">
+                <div class="col-6 col-md-4 col-lg-3 product-item cat-electronics">
                     <article class="card h-100 product-card">
                         <img src="images/earbuds.svg" class="card-img-top" alt="White wireless earbuds in a charging case" width="400" height="400">
                         <div class="card-body d-flex flex-column">
@@ -159,7 +182,7 @@
                         </div>
                     </article>
                 </div>
-                <div class="col-6 col-md-4 col-lg-3">
+                <div class="col-6 col-md-4 col-lg-3 product-item cat-electronics">
                     <article class="card h-100 product-card">
                         <span class="badge bg-danger position-absolute top-0 start-0 m-2">-20%</span>
                         <img src="images/smartwatch.svg" class="card-img-top" alt="Black smartwatch with a blue screen" width="400" height="400">
@@ -171,7 +194,7 @@
                         </div>
                     </article>
                 </div>
-                <div class="col-6 col-md-4 col-lg-3">
+                <div class="col-6 col-md-4 col-lg-3 product-item cat-fashion">
                     <article class="card h-100 product-card">
                         <img src="images/shoes.svg" class="card-img-top" alt="Orange running shoe" width="400" height="400">
                         <div class="card-body d-flex flex-column">
@@ -182,7 +205,7 @@
                         </div>
                     </article>
                 </div>
-                <div class="col-6 col-md-4 col-lg-3">
+                <div class="col-6 col-md-4 col-lg-3 product-item cat-accessories">
                     <article class="card h-100 product-card">
                         <span class="badge bg-danger position-absolute top-0 start-0 m-2">-15%</span>
                         <img src="images/backpack.svg" class="card-img-top" alt="Grey backpack with a front pocket" width="400" height="400">
@@ -194,7 +217,7 @@
                         </div>
                     </article>
                 </div>
-                <div class="col-6 col-md-4 col-lg-3">
+                <div class="col-6 col-md-4 col-lg-3 product-item cat-fashion">
                     <article class="card h-100 product-card">
                         <img src="images/sunglasses.svg" class="card-img-top" alt="Black sunglasses" width="400" height="400">
                         <div class="card-body d-flex flex-column">
@@ -205,7 +228,7 @@
                         </div>
                     </article>
                 </div>
-                <div class="col-6 col-md-4 col-lg-3">
+                <div class="col-6 col-md-4 col-lg-3 product-item cat-home">
                     <article class="card h-100 product-card">
                         <img src="images/lamp.svg" class="card-img-top" alt="Yellow desk lamp" width="400" height="400">
                         <div class="card-body d-flex flex-column">
@@ -216,7 +239,7 @@
                         </div>
                     </article>
                 </div>
-                <div class="col-6 col-md-4 col-lg-3">
+                <div class="col-6 col-md-4 col-lg-3 product-item cat-electronics">
                     <article class="card h-100 product-card">
                         <span class="badge bg-danger position-absolute top-0 start-0 m-2">-17%</span>
                         <img src="images/powerbank.svg" class="card-img-top" alt="Black 20000 mAh power bank" width="400" height="400">
@@ -228,7 +251,7 @@
                         </div>
                     </article>
                 </div>
-                <div class="col-6 col-md-4 col-lg-3">
+                <div class="col-6 col-md-4 col-lg-3 product-item cat-home">
                     <article class="card h-100 product-card">
                         <img src="images/mug.svg" class="card-img-top" alt="Green ceramic mug" width="400" height="400">
                         <div class="card-body d-flex flex-column">
@@ -239,7 +262,7 @@
                         </div>
                     </article>
                 </div>
-                <div class="col-6 col-md-4 col-lg-3">
+                <div class="col-6 col-md-4 col-lg-3 product-item cat-home">
                     <article class="card h-100 product-card">
                         <img src="images/bottle.svg" class="card-img-top" alt="Blue steel water bottle" width="400" height="400">
                         <div class="card-body d-flex flex-column">
@@ -250,7 +273,7 @@
                         </div>
                     </article>
                 </div>
-                <div class="col-6 col-md-4 col-lg-3">
+                <div class="col-6 col-md-4 col-lg-3 product-item cat-electronics">
                     <article class="card h-100 product-card">
                         <span class="badge bg-danger position-absolute top-0 start-0 m-2">-16%</span>
                         <img src="images/headphones.svg" class="card-img-top" alt="Purple over-ear headphones" width="400" height="400">
@@ -262,7 +285,7 @@
                         </div>
                     </article>
                 </div>
-                <div class="col-6 col-md-4 col-lg-3">
+                <div class="col-6 col-md-4 col-lg-3 product-item cat-accessories">
                     <article class="card h-100 product-card">
                         <img src="images/wallet.svg" class="card-img-top" alt="Brown leather wallet" width="400" height="400">
                         <div class="card-body d-flex flex-column">

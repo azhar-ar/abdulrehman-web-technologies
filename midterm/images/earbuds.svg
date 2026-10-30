@@ -1,9 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Yellow desk lamp">
-  <rect width="400" height="400" fill="#f6f2e6"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Wireless earbuds in a charging case">
+  <rect width="400" height="400" fill="#e8f1fb"/>
 
-  <ellipse cx="200" cy="320" rx="80" ry="16" fill="#3f4652"/>
-  <line x1="200" y1="318" x2="160" y2="200" stroke="#3f4652" stroke-width="12" stroke-linecap="round"/>
-  <line x1="160" y1="200" x2="230" y2="130" stroke="#3f4652" stroke-width="12" stroke-linecap="round"/>
-  <path d="M215 110 L295 150 L265 200 L190 160 Z" fill="#f2b705"/>
-  <circle cx="160" cy="200" r="11" fill="#2a2f37"/>
+  <rect x="120" y="190" width="160" height="110" rx="48" fill="#ffffff" stroke="#c9d3e0" stroke-width="4"/>
+  <line x1="124" y1="232" x2="276" y2="232" stroke="#c9d3e0" stroke-width="4"/>
+  <circle cx="200" cy="262" r="6" fill="#4caf50"/>
+  <circle cx="155" cy="135" r="30" fill="#ffffff" stroke="#c9d3e0" stroke-width="4"/>
+  <rect x="146" y="150" width="18" height="52" rx="9" fill="#ffffff" stroke="#c9d3e0" stroke-width="4"/>
+  <circle cx="245" cy="135" r="30" fill="#ffffff" stroke="#c9d3e0" stroke-width="4"/>
+  <rect x="236" y="150" width="18" height="52" rx="9" fill="#ffffff" stroke="#c9d3e0" stroke-width="4"/>
 </svg>

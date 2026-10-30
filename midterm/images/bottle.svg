@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Grey backpack with a front pocket">
-  <rect width="400" height="400" fill="#f1f3ee"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Blue steel water bottle">
+  <rect width="400" height="400" fill="#e6f4fa"/>
 
-  <path d="M165 110 Q200 60 235 110" fill="none" stroke="#4b5563" stroke-width="12" stroke-linecap="round"/>
-  <rect x="120" y="105" width="160" height="220" rx="40" fill="#6b7280"/>
-  <rect x="145" y="215" width="110" height="80" rx="18" fill="#4b5563"/>
-  <line x1="160" y1="235" x2="240" y2="235" stroke="#9ca3af" stroke-width="4"/>
-  <rect x="190" y="150" width="20" height="10" rx="5" fill="#d1d5db"/>
+  <rect x="175" y="60" width="50" height="34" rx="8" fill="#1b4965"/>
+  <rect x="160" y="92" width="80" height="22" rx="6" fill="#5fa8d3"/>
+  <rect x="140" y="110" width="120" height="230" rx="40" fill="#62b6cb"/>
+  <rect x="140" y="190" width="120" height="70" fill="#1b4965"/>
+  <text x="200" y="233" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#ffffff">1 L</text>
 </svg>

@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Green ceramic mug">
-  <rect width="400" height="400" fill="#eaf6f1"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Purple over-ear headphones">
+  <rect width="400" height="400" fill="#f0eefb"/>
 
-  <path d="M175 110 Q160 90 175 72" fill="none" stroke="#9fc9b6" stroke-width="6" stroke-linecap="round"/>
-  <path d="M215 110 Q200 90 215 72" fill="none" stroke="#9fc9b6" stroke-width="6" stroke-linecap="round"/>
-  <rect x="120" y="130" width="140" height="170" rx="20" fill="#2f8f6b"/>
-  <path d="M260 165 Q320 165 320 215 Q320 265 260 265" fill="none" stroke="#2f8f6b" stroke-width="20"/>
-  <rect x="120" y="150" width="140" height="18" fill="#ffffff" opacity="0.35"/>
+  <path d="M110 230 Q110 100 200 100 Q290 100 290 230" fill="none" stroke="#3d348b" stroke-width="18" stroke-linecap="round"/>
+  <rect x="88" y="210" width="56" height="96" rx="24" fill="#3d348b"/>
+  <rect x="256" y="210" width="56" height="96" rx="24" fill="#3d348b"/>
+  <rect x="100" y="228" width="32" height="60" rx="14" fill="#7678ed"/>
+  <rect x="268" y="228" width="32" height="60" rx="14" fill="#7678ed"/>
 </svg>

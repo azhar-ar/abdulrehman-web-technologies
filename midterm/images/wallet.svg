@@ -1,12 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Black 20000 mAh power bank">
-  <rect width="400" height="400" fill="#eceff7"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Brown leather wallet">
+  <rect width="400" height="400" fill="#f6efe9"/>
 
-  <rect x="135" y="80" width="130" height="240" rx="24" fill="#22262e"/>
-  <rect x="180" y="300" width="40" height="10" rx="4" fill="#9aa3b2"/>
-  <circle cx="175" cy="120" r="7" fill="#4caf50"/>
-  <circle cx="195" cy="120" r="7" fill="#4caf50"/>
-  <circle cx="215" cy="120" r="7" fill="#4caf50"/>
-  <circle cx="235" cy="120" r="7" fill="#4b5563"/>
-  <text x="200" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff">20000</text>
-  <text x="200" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#9aa3b2">mAh</text>
+  <rect x="95" y="130" width="210" height="150" rx="18" fill="#7f4f24"/>
+  <rect x="95" y="130" width="210" height="40" rx="18" fill="#936639"/>
+  <rect x="235" y="185" width="90" height="55" rx="14" fill="#936639"/>
+  <circle cx="262" cy="212" r="9" fill="#e6ccb2"/>
 </svg>
